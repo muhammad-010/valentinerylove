@@ -140,7 +140,7 @@ export default function ValentinesProposal() {
                 }
                 onMouseEnter={() => setPosition(getRandomPosition())}
               >
-                FAK YU BRO&apos;t 😢
+                FAK YU BRO 😢
               </button>
             </div>
           </motion.div>
@@ -161,12 +161,12 @@ export default function ValentinesProposal() {
             </h2>
 
             <p className="text-lg mt-6 max-w-3xl text-center p-6 rounded-xl">
-              Hey love, here’s a thing to show you how much I love you and adore you, hehe. 
-              seriously, you're the best valentine ever and the most beautiful, amazing girl ever! :D 
-              I’m loving you for the rest of my life, no matter how your fart sounds like sound horeg bass WKWKKW. 
-              I’m never gonna stop caring for you. Terima kasih untuk tetap menjadi ery cantik yang aku kenal dan sudah selalu adaa untuk kita ya sayang❤️ aku yakin tahun ke-2 ini memang bakal
-              jadi lebih berat, tapiii... selama kita tetap memiliki satu sama lain, we'll easily beiing together till the end yaa...
-              please just be mine yaaa!!!!! sampai jumpa di valentine tahun depann!! 💕
+              Hey love, here&apos;s a thing to show you how much I love you and adore you, hehe. 
+              Seriously, you&apos;re the best valentine ever and the most beautiful, amazing girl ever! :D 
+              I&apos;m loving you for the rest of my life, no matter how your fart sounds like sound horeg bass WKWKKW. 
+              I&apos;m never gonna stop caring for you. Terima kasih untuk tetap menjadi ery cantik yang aku kenal dan sudah selalu adaa untuk kita ya sayang❤️  
+              Aku yakin tahun ke-2 ini memang bakal jadi lebih berat, tapiii... selama kita tetap memiliki satu sama lain, we&apos;ll easily being together till the end yaa...  
+              Please just be mine yaaa!!!!! Sampai jumpa di valentine tahun depann!! 💕
             </p>
             <p className="text-lg mt-6 max-w-3xl text-center p-6 rounded-xl relative z-10">
               Oh ya, here I have some documentation when I made your valentine! :D  <br></br>
