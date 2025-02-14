@@ -83,13 +83,20 @@ export default function PhotoPairGame({
     }
   };
 
-  // Check if game is won
+  // // Check if game is won
+  // useEffect(() => {
+  //   if (matched.length === imagePairs.length) {
+  //     handleShowProposal();
+  //   }
+  // }, [matched, handleShowProposal]);
+
   useEffect(() => {
     if (matched.length === imagePairs.length) {
+      console.log("Game selesai, menampilkan proposal...");
       handleShowProposal();
     }
   }, [matched, handleShowProposal]);
-
+  
   return (
     <div className="grid grid-cols-9 gap-2 max-w-full overflow-hidden">
     {/* Image preload */}
@@ -138,7 +145,7 @@ export default function PhotoPairGame({
               initial={{ rotateY: -180 }}
               animate={{ rotateY: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ backfaceVisibility: "hidden" }}
+              style={{ backfaceVisibility: "visible" }}
             >
               <Image
                 src={images[index]}

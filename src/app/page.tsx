@@ -14,9 +14,11 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleShowProposal = () => {
+    console.log("Transitioning to proposal...");
     setIsTransitioning(true);
     setTimeout(() => {
       setShowValentinesProposal(true);
+      console.log("Proposal ditampilkan!");
     }, ANIM_DURATION * 1000);
   };
 

@@ -1,39 +1,30 @@
 "use client";
 
-// import type { Metadata } from "next";
 import "./globals.css";
 import { useEffect, useRef } from "react";
-
-// export const metadata: Metadata = {
-//   title: "Valentines: A Romantic Card Game with a Surprise Proposal",
-//   description:
-//     "Play a unique Valentine's card game. Complete the collection to reveal a romantic proposal!",
-//   keywords: [
-//     "Valentine's card game",
-//     "romantic proposal game",
-//     "photo card challenge",
-//     "Valentine's Day surprise",
-//     "couples game",
-//     "valentine's day game",
-//     "proposal game",
-//   ],
-// };
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
-  const playAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.volume = 0.5;
-      audioRef.current
-        .play()
-        .catch((err) => console.log("Autoplay blocked:", err));
-    }
-  };
+  const pathname = usePathname();
 
   useEffect(() => {
+    const playAudio = () => {
+      if (audioRef.current) {
+        audioRef.current.volume = 0.5;
+        audioRef.current.play().catch((err) => {
+          console.log("Autoplay blocked:", err);
+        });
+      }
+    };
+
+    // Tambahkan event listener hanya jika audioRef sudah ada
+    if (audioRef.current) {
+      console.log("Audio initialized:", audioRef.current);
+    }
+
     document.addEventListener("click", playAudio);
     document.addEventListener("touchstart", playAudio);
 
@@ -41,19 +32,19 @@ export default function RootLayout({
       document.removeEventListener("click", playAudio);
       document.removeEventListener("touchstart", playAudio);
     };
-  }, []);
+  }, []); // Tidak perlu menambahkan dependency pada audioRef.current karena hanya diinisialisasi sekali
 
   return (
     <html lang="en">
       <body>
-        {/* Elemen audio */}
+        {/* Elemen audio dengan ref */}
         <audio ref={audioRef} loop>
           <source src="/bg-music.mp3" type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
 
-        {/* Children tetap ada */}
-        {children}
+        {/* Render halaman sesuai dengan routing */}
+        <main key={pathname}>{children}</main>
       </body>
     </html>
   );
